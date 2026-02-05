@@ -6,8 +6,6 @@ import math
 import os
 from pathlib import Path
 
-# 依存: pip install reportlab pillow
-
 def create_layout_pdf(items: dict, out_path: str = "labels.pdf",
                      cols: int = 2, rows: int = 3,
                      margin: float = 36):
@@ -84,6 +82,3 @@ def create_layout_pdf(items: dict, out_path: str = "labels.pdf",
         c.showPage()
     c.save()
 
-if __name__ == "__main__":
-    mapping = {numbers.stem: numbers for numbers in Path("images").glob("*.png")}
-    create_layout_pdf(mapping)
